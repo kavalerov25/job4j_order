@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import ru.job4j.order.dto.OrderDTO;
 import ru.job4j.order.model.Order;
 import ru.job4j.order.model.Status;
 import ru.job4j.order.service.OrderServiceImpl;
@@ -16,7 +17,7 @@ public class OrderController {
     private final OrderServiceImpl orders;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrderById(@PathVariable int id) {
+    public ResponseEntity<OrderDTO> getOrderById(@PathVariable int id) {
         var order = orders.findOrderById(id);
         return new ResponseEntity<>(
                 order.orElseThrow(

@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @Slf4j
 public class OrderApplication {
-    private static final String URL = "http://localhost:8080/orders";
+    private static final String URL = "http://localhost:8081/orders";
 
 
     @Bean
